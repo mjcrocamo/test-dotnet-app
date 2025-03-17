@@ -1,31 +1,22 @@
-using System.Diagnostics;
+using System.Net.Mime;
 using Microsoft.AspNetCore.Mvc;
-using WebApplication2.Models;
 
-namespace WebApplication2.Controllers;
+namespace Mc.Test.Web.Controllers;
 
-public class HomeController : Controller
+[ApiController]
+[Consumes(MediaTypeNames.Application.Json)]
+public class HomeController : ControllerBase
 {
-    private readonly ILogger<HomeController> _logger;
 
-    public HomeController(ILogger<HomeController> logger)
+    /// <summary>
+    /// Test Controller endpoint
+    /// </summary>
+    /// <returns>Test</returns>
+    [HttpGet]
+    [Route("/test2")]
+    public async Task<IActionResult> Test()
     {
-        _logger = logger;
-    }
-
-    public IActionResult Index()
-    {
-        return View();
-    }
-
-    public IActionResult Privacy()
-    {
-        return View();
-    }
-
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
-    {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        await Task.CompletedTask;
+        return Ok("hello world 2");
     }
 }

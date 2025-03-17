@@ -1,14 +1,14 @@
 name: mytestapp
 
 services:
-  test-web-app-1:
+  dev-web-app:
     build:
       context: .
       dockerfile: ./docker/dev-docker.Dockerfile
     ports:
       - 8085:8080
-    volumes:
-      - ./TestWebApplications/:/app
+#    volumes:
+#      - ./TestWebApplications/:/app
     networks:
       - web-apps
   
@@ -19,7 +19,6 @@ services:
       POSTGRES_DB: exampledb
     networks:
       - web-apps
-
 
 networks:
   web-apps:

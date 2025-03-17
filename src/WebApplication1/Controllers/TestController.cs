@@ -1,8 +1,10 @@
+using System.Net.Mime;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Mc.Test.Web.Controllers;
 
 [ApiController]
+[Consumes(MediaTypeNames.Application.Json)]
 public class TestController : ControllerBase
 {
     /// <summary>
