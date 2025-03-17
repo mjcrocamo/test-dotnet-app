@@ -2,7 +2,13 @@ name: mytestapp
 
 services:
   test-web-app-1:
-    image: mcr.microsoft.com/dotnet/sdk:8.0
+    build:
+      context: .
+      dockerfile: ./docker/dev-docker.Dockerfile
+    ports:
+      - 8085:8080
+    volumes:
+      - ./TestWebApplications/:/app
     networks:
       - web-apps
   
