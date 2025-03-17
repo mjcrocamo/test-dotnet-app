@@ -1,0 +1,19 @@
+name: mytestapp
+
+services:
+  test-web-app-1:
+    image: mcr.microsoft.com/dotnet/sdk:8.0
+    networks:
+      - web-apps
+  
+  postgres-db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: example
+      POSTGRES_DB: exampledb
+    networks:
+      - web-apps
+
+
+networks:
+  web-apps:
