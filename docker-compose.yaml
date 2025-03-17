@@ -7,8 +7,8 @@ services:
       dockerfile: ./docker/dev-docker.Dockerfile
     ports:
       - 8085:8080
-#    volumes:
-#      - ./TestWebApplications/:/app
+    volumes:
+      - ./:/app
     networks:
       - web-apps
   
