@@ -1,0 +1,12 @@
+# Add a reference to a project
+dotnet add "src/WebApplication1/WebApplication1.csproj" reference "src/DataAccess/DataAccess.csproj"
+
+# Create a new class lib
+dotnet new classlib name="MyName" (goes for web, console, etc)
+
+# Add project to sln
+dotnet sln add src/DataAccess/DataAccess.csproj
+
+# Remove project from sln
+dotnet sln remove src/DataAccess/DataAccess.csproj
+

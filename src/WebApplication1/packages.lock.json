@@ -53,6 +53,9 @@
         "type": "Transitive",
         "resolved": "6.4.0",
         "contentHash": "1Hh3atb3pi8c+v7n4/3N80Jj8RvLOXgWxzix6w3OZhB7zBGRwsy7FWr4e3hwgPweSBpwfElqj4V4nkjYabH9nQ=="
+      },
+      "dataaccess": {
+        "type": "Project"
       }
     }
   }
